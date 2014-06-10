@@ -51,8 +51,8 @@ shinyServer(
 		for (i in 1:input$numLang) {
 			res = paste(res, langs[o[i]], "?  mse =", as.integer(mse[o[i]]*100)/100.0, "\n")
 		}
-		paste(res, "\nYou entered", nchar(input$stext), "symbols:\n", input$stext)
+		paste(res, "\nThe following", nchar(input$stext), "symbols were entered:\n", input$stext)
 	})
-	output$inlen <- renderText({ x() })
+	output$intext <- renderText({ x() })
   }
 )
